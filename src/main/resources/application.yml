@@ -6,6 +6,6 @@ spring:
     restart.enabled: false
     livereload.enabled: true
 
-  logging:
-    level:
-      io.devfactory: debug
+logging:
+  level:
+    io.devfactory: debug
