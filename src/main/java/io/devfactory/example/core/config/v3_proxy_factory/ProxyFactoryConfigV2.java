@@ -13,11 +13,12 @@ import org.springframework.aop.support.NameMatchMethodPointcut;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+// BeanPostProcessor를 통한 Proxy2Config를 사용하므로 여기는 주석 처리함...
 @Slf4j
-@Configuration
+// @Configuration
 public class ProxyFactoryConfigV2 {
 
-  @Bean
+  // @Bean
   public ProxyOrderControllerV2 orderControllerProxyFactoryV2(LogTrace logTrace) {
     ProxyOrderControllerV2 controllerImpl = new ProxyOrderControllerV2(orderServiceProxyFactoryV2(logTrace));
 
@@ -29,7 +30,7 @@ public class ProxyFactoryConfigV2 {
     return proxy;
   }
 
-  @Bean
+  // @Bean
   public ProxyOrderServiceV2 orderServiceProxyFactoryV2(LogTrace logTrace) {
     ProxyOrderServiceV2 serviceImpl = new ProxyOrderServiceV2(orderRepositoryProxyFactoryV2(logTrace));
 
@@ -41,7 +42,7 @@ public class ProxyFactoryConfigV2 {
     return proxy;
   }
 
-  @Bean
+  // @Bean
   public ProxyOrderRepositoryV2 orderRepositoryProxyFactoryV2(LogTrace logTrace) {
     ProxyOrderRepositoryV2 repositoryImpl = new ProxyOrderRepositoryV2();
 
