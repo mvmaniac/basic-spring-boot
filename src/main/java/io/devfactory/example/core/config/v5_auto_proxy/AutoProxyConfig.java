@@ -1,7 +1,5 @@
 package io.devfactory.example.core.config.v5_auto_proxy;
 
-import io.devfactory.example.core.config.Proxy1Config;
-import io.devfactory.example.core.config.Proxy2Config;
 import io.devfactory.example.core.config.v3_proxy_factory.advice.LogTraceAdvice;
 import io.devfactory.example.core.trace.logtrace.LogTrace;
 import lombok.extern.slf4j.Slf4j;
@@ -9,13 +7,11 @@ import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.aop.support.NameMatchMethodPointcut;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 
+// AopConfig에서 사용하므로 여기는 주석 처리함
 @Slf4j
-@Import({Proxy1Config.class, Proxy2Config.class})
-@Configuration
+// @Import({Proxy1Config.class, Proxy2Config.class})
+// @Configuration
 public class AutoProxyConfig {
 
   // @Bean
@@ -42,7 +38,7 @@ public class AutoProxyConfig {
     return new DefaultPointcutAdvisor(pointcut, advice);
   }
 
-  @Bean
+  // @Bean
   public Advisor advisor3(LogTrace logTrace) {
     // pointcut + advice = advisor
     // pointcut
