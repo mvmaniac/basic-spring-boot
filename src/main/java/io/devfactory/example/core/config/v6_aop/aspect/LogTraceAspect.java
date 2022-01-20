@@ -17,7 +17,7 @@ public class LogTraceAspect {
     this.logTrace = logTrace;
   }
 
-  @Around("execution(* io.devfactory.example.core.app..*(..))")
+  @Around("execution(* io.devfactory.example.core.app.proxy*..*(..))")
   public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
     TraceStatus status = null;
     Object result;
