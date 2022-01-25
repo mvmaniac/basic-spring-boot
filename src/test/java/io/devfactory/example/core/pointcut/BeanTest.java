@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
-@SuppressWarnings({"squid:S2699", "squid:S5976"})
+@SuppressWarnings({"squid:S2699"})
 @Slf4j
 @Import(BeanTest.BeanAspect.class)
 @SpringBootTest

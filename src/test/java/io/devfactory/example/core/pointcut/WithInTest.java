@@ -11,7 +11,7 @@ import java.lang.reflect.Method;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SuppressWarnings({"squid:S2699", "squid:S5976"})
+@SuppressWarnings("squid:S5976")
 @Slf4j
 class WithinTest {
 
