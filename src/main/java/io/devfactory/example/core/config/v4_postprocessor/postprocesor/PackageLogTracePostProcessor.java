@@ -7,7 +7,6 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.lang.NonNull;
 
-@SuppressWarnings("ClassCanBeRecord")
 @Slf4j
 public class PackageLogTracePostProcessor implements BeanPostProcessor {
 

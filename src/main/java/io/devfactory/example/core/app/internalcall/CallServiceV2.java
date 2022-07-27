@@ -6,7 +6,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 // ObjectProvider(Provider), ApplicationContext를 사용해서 지연(Lazy) 조회
-@SuppressWarnings("ClassCanBeRecord")
 @Slf4j
 @Component
 public class CallServiceV2 {

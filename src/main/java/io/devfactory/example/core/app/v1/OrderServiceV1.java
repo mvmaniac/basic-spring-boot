@@ -5,7 +5,6 @@ import io.devfactory.example.core.trace.hellotrace.HelloTraceV1;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@SuppressWarnings("ClassCanBeRecord")
 @RequiredArgsConstructor
 @Service
 public class OrderServiceV1 {

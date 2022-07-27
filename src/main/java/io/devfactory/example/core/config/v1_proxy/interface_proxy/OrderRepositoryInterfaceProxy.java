@@ -5,7 +5,6 @@ import io.devfactory.example.core.trace.TraceStatus;
 import io.devfactory.example.core.trace.logtrace.LogTrace;
 import lombok.RequiredArgsConstructor;
 
-@SuppressWarnings("ClassCanBeRecord")
 @RequiredArgsConstructor
 public class OrderRepositoryInterfaceProxy implements ProxyOrderRepositoryV1 {
 

@@ -1,12 +1,9 @@
 package io.devfactory.example.core.app.internalcall;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.ObjectProvider;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 // 구조를 분리(변경)
-@SuppressWarnings("ClassCanBeRecord")
 @Slf4j
 @Component
 public class CallServiceV3 {

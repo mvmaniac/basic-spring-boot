@@ -3,7 +3,6 @@ package io.devfactory.example.core.trace.callback;
 import io.devfactory.example.core.trace.TraceStatus;
 import io.devfactory.example.core.trace.logtrace.LogTrace;
 
-@SuppressWarnings("ClassCanBeRecord")
 public class TraceTemplate {
 
   private final LogTrace trace;

@@ -8,7 +8,6 @@ import org.springframework.lang.NonNull;
 
 import java.lang.reflect.Method;
 
-@SuppressWarnings("ClassCanBeRecord")
 public class LogTraceAdvice implements MethodInterceptor {
 
   private final LogTrace logTrace;
