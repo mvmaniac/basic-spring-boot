@@ -17,7 +17,7 @@ public class BasicSpringBootApplication {
 
   @Profile("local")
   @Bean
-  public TestDataInit testDataInit(@Qualifier("jdbcTemplateV3ItemRepository") ItemRepository itemRepository) {
+  public TestDataInit testDataInit(@Qualifier("jpaItemRepositoryV2") ItemRepository itemRepository) {
     return new TestDataInit(itemRepository);
   }
 

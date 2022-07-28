@@ -19,7 +19,7 @@ public class ItemController {
 
   private final ItemService itemService;
 
-  public ItemController(@Qualifier("jdbcTemplateV3ItemService") ItemService itemService) {
+  public ItemController(@Qualifier("jpaItemServiceV2") ItemService itemService) {
     this.itemService = itemService;
   }
 

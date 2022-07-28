@@ -2,10 +2,34 @@ spring:
   application:
     name: basic-spring-boot
 
+  profiles:
+    group:
+      default: local
+
+  datasource:
+    url: jdbc:h2:tcp://localhost/../data_user/test
+    username: sa
+    password: 1234
+
   devtools:
     restart.enabled: false
     livereload.enabled: true
 
+mybatis:
+  type-aliases-package: io.devfactory.example.jdbc2.domain
+  configuration:
+    map-underscore-to-camel-case: true
+
 logging:
   level:
     io.devfactory: debug
+
+    # jdbcTemplate sql log
+    org.springframework.jdbc: debug
+
+    # mybatis sql log
+    io.devfactory.example.jdbc2.repository.mybatis: trace
+
+    # JPA log
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace

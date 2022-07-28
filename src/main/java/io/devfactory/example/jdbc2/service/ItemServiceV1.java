@@ -4,18 +4,15 @@ import io.devfactory.example.jdbc2.domain.Item;
 import io.devfactory.example.jdbc2.repository.ItemRepository;
 import io.devfactory.example.jdbc2.repository.ItemSearchCond;
 import io.devfactory.example.jdbc2.repository.ItemUpdateDto;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class ItemServiceV1 implements ItemService {
 
   private final ItemRepository itemRepository;
 
-  public ItemServiceV1(@Qualifier("jdbcTemplateV3ItemRepository") ItemRepository itemRepository) {
+  public ItemServiceV1(ItemRepository itemRepository) {
     this.itemRepository = itemRepository;
   }
 

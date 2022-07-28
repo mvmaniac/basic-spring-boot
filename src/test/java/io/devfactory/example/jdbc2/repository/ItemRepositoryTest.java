@@ -18,7 +18,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 class ItemRepositoryTest {
 
-  @Qualifier("jdbcTemplateV3ItemRepository")
+  @Qualifier("jpaItemRepositoryV2")
   @Autowired
   private ItemRepository itemRepository;
 
