@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--suppress SqlDialectInspection, SqlNoDataSourceInspection -->
+<mapper namespace="io.devfactory.example.jdbc2.repository.mybatis.ItemMapper">
+
+  <insert id="save" useGeneratedKeys="true" keyProperty="id">
+    insert into item (
+      item_name
+      , price
+      , quantity
+    ) values (
+      #{itemName}
+      , #{price}
+      , #{quantity}
+    )
+  </insert>
+
+  <update id="update">
+    update item i
+    set
+      i.item_name = #{updateParam.itemName}
+      , i.price = #{updateParam.price}
+      , i.quantity = #{updateParam.quantity}
+    where i.id = #{id}
+  </update>
+
+  <select id="findById" resultType="Item">
+    select
+      i.id
+      , i.item_name
+      , i.price
+      , i.quantity
+    from item i
+    where i.id = #{id}
+  </select>
+
+  <select id="findAll" resultType="Item">
+    select
+      i.id
+      , i.item_name
+      , i.price
+      , i.quantity
+    from item i
+
+    <where>
+      <if test="null != itemName and '' != itemName">
+        and item_name like concat('%', #{itemName}, '%')
+      </if>
+
+      <if test="null != maxPrice">
+        and price &lt;= #{maxPrice}
+      </if>
+    </where>
+  </select>
+</mapper>
