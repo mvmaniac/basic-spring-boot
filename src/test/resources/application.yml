@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    group:
+      default: test
+
+  # 기본 true, false로 할 경우 jdbc:h2:mem:testdb로 고정 시킴
+  datasource:
+    generate-unique-name: false
+
+mybatis:
+  type-aliases-package: io.devfactory.example.jdbc2.domain
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    io.devfactory: debug
+
+    #jdbcTemplate sql log
+    org.springframework.jdbc: debug
+
+    # mybatis sql log
+    io.devfactory.example.jdbc2.repository.mybatis: trace
+
+    # JPA log
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
