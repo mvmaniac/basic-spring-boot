@@ -16,9 +16,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Transactional
 @SpringBootTest
-class ItemRepositoryTest {
+class ItemRepositoryV2Test {
 
-  @Qualifier("jpaItemRepositoryV2")
+  @Qualifier("jpaItemRepositoryV3")
   @Autowired
   private ItemRepository itemRepository;
 
