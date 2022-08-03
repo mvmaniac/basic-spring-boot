@@ -16,12 +16,22 @@ logging:
   level:
     io.devfactory: debug
 
-    #jdbcTemplate sql log
+    # jdbcTemplate sql log
     org.springframework.jdbc: debug
 
     # mybatis sql log
     io.devfactory.example.jdbc2.repository.mybatis: trace
 
-    # JPA log
+    # jpa sql log
     org.hibernate.SQL: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+    # transaction interceptor log
+    org.springframework.transaction.interceptor: trace
+
+    # jdbcTemplate transaction log
+    org.springframework.jdbc.datasource.DataSourceTransactionManager: debug
+
+    # jpa transaction log
+    org.springframework.orm.jpa.JpaTransactionManager: debug
+    org.hibernate.resource.transaction: debug
