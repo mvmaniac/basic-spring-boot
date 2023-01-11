@@ -13,7 +13,7 @@ import org.springframework.context.event.EventListener;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 
 @SuppressWarnings("squid:S2699")
 @Slf4j

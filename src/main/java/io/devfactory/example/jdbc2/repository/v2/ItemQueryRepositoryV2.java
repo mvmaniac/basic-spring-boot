@@ -7,7 +7,7 @@ import io.devfactory.example.jdbc2.repository.ItemSearchCond;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 import java.util.List;
 
 import static io.devfactory.example.jdbc2.domain.QItem.item;
