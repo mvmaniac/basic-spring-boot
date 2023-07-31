@@ -35,3 +35,13 @@ logging:
     # jpa transaction log
     org.springframework.orm.jpa.JpaTransactionManager: debug
     org.hibernate.resource.transaction: debug
+
+custom:
+  datasource:
+    url: local.db.com
+    username: username
+    password: password
+    etc:
+      max-connection: 1
+      timeout: 3500ms
+      options: CACHE,ADMIN
