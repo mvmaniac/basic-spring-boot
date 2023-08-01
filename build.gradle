@@ -1,13 +1,17 @@
 plugins {
-  id 'org.springframework.boot' version '3.1.0'
-  id 'io.spring.dependency-management' version '1.1.0'
+  id 'org.springframework.boot' version '3.3.5'
+  id 'io.spring.dependency-management' version '1.1.6'
   id 'java'
 }
 
 group = 'io.devfactory'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = JavaVersion.VERSION_19
-targetCompatibility = JavaVersion.VERSION_19
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of(21)
+  }
+}
 
 configurations {
   compileOnly {
@@ -31,7 +35,7 @@ dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-validation'
   implementation 'org.springframework.boot:spring-boot-starter-actuator'
 
-  implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.1'
+  implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.3'
 
   // Querydsl 추가
   implementation "com.querydsl:querydsl-jpa:${dependencyManagement.importedProperties['querydsl.version']}:jakarta"
@@ -40,6 +44,8 @@ dependencies {
   annotationProcessor 'jakarta.annotation:jakarta.annotation-api'
 
   runtimeOnly 'com.h2database:h2'
+
+  implementation 'io.micrometer:micrometer-registry-prometheus'
 
   developmentOnly 'org.springframework.boot:spring-boot-devtools'
   annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
@@ -50,14 +56,29 @@ dependencies {
   testAnnotationProcessor 'org.projectlombok:lombok'
 
   testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
   useJUnitPlatform()
 }
 
+// https://docs.spring.io/spring-boot/docs/current/reference/html/configuration-metadata.html#appendix.configuration-metadata.annotation-processor.configuring
+// tasks.named('compileJava') {
+//  inputs.files(tasks.named('processResources'))
+//}
 tasks.named('compileJava') {
+  dependsOn bootBuildInfo
   inputs.files(tasks.named('processResources'))
+}
+
+// /actuator/info 정보에 build 정보가 추가됨
+// 버전 차이인지 모르겠지만 강의와 다르게 아래처럼 추가 설정 필요
+// tasks.named('compileJava') {
+//   dependsOn bootBuildInfo
+// }
+springBoot {
+  buildInfo()
 }
 
 // Querydsl 추가, 자동 생성된 Q클래스 gradle clean으로 제거 (build and run 설정을 intellij로 쓸 경우)
