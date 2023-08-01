@@ -1,0 +1,34 @@
+{
+  "properties": [
+    {
+      "name": "custom.datasource.url",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.url."
+    },
+    {
+      "name": "custom.datasource.username",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.username."
+    },
+    {
+      "name": "custom.datasource.password",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.password."
+    },
+    {
+      "name": "custom.datasource.etc.max-connection",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.etc.max-connection."
+    },
+    {
+      "name": "custom.datasource.etc.timeout",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.etc.timeout."
+    },
+    {
+      "name": "custom.datasource.etc.options",
+      "type": "java.lang.String",
+      "description": "Description for custom.datasource.etc.options."
+    }
+  ]
+}

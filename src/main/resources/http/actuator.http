@@ -1,0 +1,39 @@
+### heath
+GET http://localhost:9292/actuator/health
+
+### info
+GET http://localhost:9292/actuator/info
+
+### loggers
+### 실시간으로 해당 클래스의 로그 레벨 확인
+GET http://localhost:9292/actuator/loggers/io.devfactory.example.boot.LogController
+
+### 실시간으로 해당 클래스의 로그 레벨 변경
+POST http://localhost:9292/actuator/loggers/io.devfactory.example.boot.LogController
+Content-Type: application/json
+
+{
+  "configuredLevel": "debug"
+}
+
+### 해당 클래스의 로그 확인
+GET http://localhost:8080/log
+
+### metrics (내부적으로 마이크로미터 라이브러리 사용, Slf4j와 같이 표준화된 스펙 사용...)
+### 전체 종류 조회
+GET http://localhost:9292/actuator/metrics
+
+### jvm 메모리 사용량, jvm.memory.used
+GET http://localhost:9292/actuator/metrics/jvm.memory.used
+
+### jvmjvm 메모리 사용량, .memory.used - 전체 메모리 중 사용 중인 메모리만 조회 (tag 필터 사용)
+GET http://localhost:9292/actuator/metrics/jvm.memory.used?tag=area:heap
+
+### jvm 메모리 사용량, jvm.memory.used - 전체 메모리 중 사용 중이 않는 메모리만 조회 (tag 필터 사용)
+GET http://localhost:9292/actuator/metrics/jvm.memory.used?tag=area:nonheap
+
+### http 요청 수 확인, http.server.requests (첫 기동 후 요청이 있어야 표시됨)
+GET http://localhost:9292/actuator/metrics/http.server.requests
+
+### prometheus
+GET http://localhost:9292/actuator/prometheus

@@ -15,10 +15,30 @@ spring:
     restart.enabled: false
     livereload.enabled: true
 
+server:
+  tomcat:
+    mbeanregistry.enabled: true # tomcat metric 활성화, 추가적인 mertic을 알 수 있음
+
 mybatis:
   type-aliases-package: io.devfactory.example.jdbc2.domain
   configuration:
     map-underscore-to-camel-case: true
+
+management:
+  server:
+    port: 9292 # 다른 포트 사용
+  endpoints:
+    web:
+      exposure:
+        include: health, info, loggers, metrics, prometheus
+  endpoint:
+    health:
+      show-components: always
+      # show-details: always # 상세 정보 표시
+  info:
+    os.enabled: true
+    java.enabled: true
+    env.enabled: true
 
 logging:
   level:
@@ -33,3 +53,18 @@ logging:
     # JPA log
     org.hibernate.SQL: debug
     org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+custom:
+  datasource:
+    url: local.db.com
+    username: username
+    password: password
+    etc:
+      max-connection: 1
+      timeout: 3500ms
+      options: CACHE,ADMIN
+
+info:
+  app:
+    name: basic-spring-boot
+    desc: env.enabled를 true로 하면 info이하 설정된 내용이 표시됨

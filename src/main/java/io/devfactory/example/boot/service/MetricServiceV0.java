@@ -1,0 +1,31 @@
+package io.devfactory.example.boot.service;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+
+import java.util.concurrent.atomic.AtomicInteger;
+
+@Slf4j
+@Service
+public class MetricServiceV0 implements MetricService {
+
+  private final AtomicInteger stock = new AtomicInteger(100);
+
+  @Override
+  public void order() {
+    log.info("주문");
+    stock.decrementAndGet();
+  }
+
+  @Override
+  public void cancel() {
+    log.info("취소");
+    stock.incrementAndGet();
+  }
+
+  @Override
+  public AtomicInteger getStock() {
+    return stock;
+  }
+
+}
