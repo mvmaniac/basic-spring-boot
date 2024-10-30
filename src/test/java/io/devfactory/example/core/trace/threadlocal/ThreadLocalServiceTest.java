@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.TimeUnit;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class ThreadLocalServiceTest {
 
@@ -31,7 +31,7 @@ class ThreadLocalServiceTest {
     // sleep(2000); // 동시성 문제 발생X
     sleep(100); // 동시성 문제 발생O -> ThreadLocal 사용으로 발생하지 않음
     threadB.start();
-    
+
     sleep(3000); // 메인 쓰레드 종료 대기
     log.info("main exit");
   }

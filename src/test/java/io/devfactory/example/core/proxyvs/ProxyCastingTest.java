@@ -9,7 +9,7 @@ import org.springframework.aop.framework.ProxyFactory;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class ProxyCastingTest {
 

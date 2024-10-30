@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Proxy;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class JdkDynamicProxyTest {
 

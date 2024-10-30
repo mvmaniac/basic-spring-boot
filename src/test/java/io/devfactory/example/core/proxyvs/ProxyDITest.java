@@ -6,14 +6,11 @@ import io.devfactory.example.core.proxyvs.code.ProxyDIAspect;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.aop.framework.ProxyFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
 
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 @Import(ProxyDIAspect.class)
 // @SpringBootTest(properties = "spring.aop.proxy-target-class=false")

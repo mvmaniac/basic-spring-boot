@@ -16,7 +16,7 @@ import org.springframework.lang.NonNull;
 
 import java.lang.reflect.Method;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class AdvisorTest {
 

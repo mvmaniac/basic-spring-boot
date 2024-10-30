@@ -2,15 +2,12 @@ package io.devfactory.example.core.cglib;
 
 import io.devfactory.example.core.cglib.code.TimeMethodInterceptor;
 import io.devfactory.example.core.common.service.ConcreteService;
-import io.devfactory.example.core.jdkdynamic.code.*;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.cglib.proxy.Enhancer;
 
-import java.lang.reflect.Proxy;
-
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class CglibTest {
 

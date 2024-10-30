@@ -6,10 +6,10 @@ import org.junit.jupiter.api.Test;
 
 import java.lang.reflect.Method;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class ReflectionTest {
-  
+
   @DisplayName("리플렉션 테스트 0")
   @Test
   void reflectionV0() {
@@ -73,6 +73,7 @@ class ReflectionTest {
   }
 
   static class Hello {
+
     public String callA() {
       log.info("callA");
       return "A";
@@ -82,6 +83,7 @@ class ReflectionTest {
       log.info("callB");
       return "B";
     }
+
   }
 
 }

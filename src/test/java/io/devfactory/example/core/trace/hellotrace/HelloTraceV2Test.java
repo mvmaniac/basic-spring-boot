@@ -4,9 +4,9 @@ import io.devfactory.example.core.trace.TraceStatus;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 class HelloTraceV2Test {
-  
+
   @DisplayName("시작 종료 테스트")
   @Test
   void begin_end() {

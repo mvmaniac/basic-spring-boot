@@ -7,16 +7,16 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class ProxyPatternTest {
-  
+
   @DisplayName("프록시 패턴 적용 전 테스트")
   @Test
   void noProxy() {
     RealSubject realSubject = new RealSubject();
     ProxyPatternClient client = new ProxyPatternClient(realSubject);
-    
+
     client.execute();
     client.execute();
     client.execute();

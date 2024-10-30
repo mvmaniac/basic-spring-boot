@@ -4,7 +4,7 @@ import io.devfactory.example.core.trace.TraceStatus;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 class FieldLogTraceTest {
 
   private final FieldLogTrace trace = new FieldLogTrace();

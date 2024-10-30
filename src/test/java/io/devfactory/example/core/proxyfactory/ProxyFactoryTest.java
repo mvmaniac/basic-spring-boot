@@ -12,10 +12,10 @@ import org.springframework.aop.support.AopUtils;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 class ProxyFactoryTest {
-  
+
   @DisplayName("인터페이스가 있으면 JDK 동적 프록시 사용")
   @Test
   void interfaceProxy() {

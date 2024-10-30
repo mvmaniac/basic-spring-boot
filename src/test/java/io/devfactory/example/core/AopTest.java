@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Import;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@SuppressWarnings("squid:S2699")
+@SuppressWarnings("squid:S1186")
 @Slf4j
 //@Import(AspectV1.class)
 //@Import(AspectV2.class)
